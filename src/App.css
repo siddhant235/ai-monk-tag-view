@@ -1,56 +1,247 @@
-.app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App Container Styles */
+
+* {
+  box-sizing: border-box;
 }
 
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+}
+
+/* App Header */
 .app-header {
-  margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.6s ease;
 }
 
-.app-header h1 {
-  background: linear-gradient(to right, #646cff, #747bff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
+.app-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 12px 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
 }
 
-.app-main {
+.app-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Tag Container */
+.tag-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* App Footer */
+.app-footer {
+  max-width: 900px;
+  margin: 24px auto 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  animation: fadeInUp 0.6s ease 0.2s backwards;
 }
 
-.card {
-  padding: 2em;
+/* Export Button */
+.export-btn {
+  padding: 14px 32px;
+  background: white;
+  border: none;
   border-radius: 8px;
-  background-color: #1a1a1a;
+  color: #667eea;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.card p {
-  margin-top: 1em;
-  color: #888;
+.export-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
 
-code {
-  background-color: #2a2a2a;
-  padding: 0.2em 0.4em;
+.export-btn:active {
+  transform: translateY(0);
+}
+
+/* Export Output Section */
+.export-output {
+  max-width: 900px;
+  margin: 24px auto 0;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.4s ease;
+}
+
+.export-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.export-output-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 6px;
+  color: #495057;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e9ecef;
+  color: #212529;
+  transform: scale(1.1);
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+.export-output-content {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #212529;
+  overflow-x: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.export-output-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.export-output-content::-webkit-scrollbar-track {
+  background: #e9ecef;
   border-radius: 4px;
-  font-family: "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: light) {
-  .card {
-    background-color: #f0f0f0;
+.export-output-content::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.export-output-content::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px 12px;
   }
 
-  code {
-    background-color: #e0e0e0;
+  .app-title {
+    font-size: 32px;
   }
 
-  .card p {
-    color: #666;
+  .app-subtitle {
+    font-size: 14px;
   }
+
+  .tag-container {
+    padding: 16px;
+  }
+
+  .export-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .export-output {
+    padding: 16px;
+  }
+
+  .export-output-header h3 {
+    font-size: 18px;
+  }
+
+  .export-output-content {
+    font-size: 12px;
+    padding: 12px;
+    max-height: 300px;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
 }
