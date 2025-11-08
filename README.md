@@ -6,16 +6,12 @@ A beautiful, type-safe React + TypeScript application for managing hierarchical 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-## 🚀 Features
-
-### ✅ Implemented (Phase 1 & 2)
+## 🚀 Features  ### ✅ Implemented
 - **Recursive Tag Rendering** - Display nested tags at any depth
 - **Collapsible Nodes** - Expand/collapse any tag including root
 - **Beautiful UI** - Modern gradient design with smooth animations
 - **TypeScript** - Full type safety and better DX
 - **Responsive Design** - Works on all screen sizes
-
-### 🔜 Coming Soon (Phase 3-7)
 - **Editable Data Fields** - Modify tag data inline
 - **Dynamic Child Creation** - Add children to any tag
 - **Editable Names** - Click to rename tags
